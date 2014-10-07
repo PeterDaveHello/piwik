@@ -847,7 +847,7 @@ class Tracker
         if ($e->getCode() == 1044 || $e->getCode() == 42000) {
             return "Error while connecting to the Piwik database - please check your credentials in config/config.ini.php file";
         } else {
-            return $e->getMessage();
+            return $e->getMessage() . "\n" . $e->getTraceAsString();
         }
     }
 
